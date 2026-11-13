@@ -1,0 +1,35 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    color-scheme: dark;
+    background-color: var(--bg-from);
+    -webkit-tap-highlight-color: transparent;
+  }
+  body {
+    @apply bg-bg-from font-sans text-text-main antialiased;
+    margin: 0;
+  }
+  button {
+    @apply focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent-cyan;
+  }
+}
+
+/* Grafik Recharts: warna lewat token (menimpa atribut bawaan pustaka) */
+.recharts-cartesian-axis-tick-value { fill: var(--text-muted); }
+.recharts-cartesian-grid line, .recharts-cartesian-axis-line { stroke: var(--track); }
+.recharts-area-curve { stroke: var(--accent-to); stroke-width: 2.5px; }
+.line-cyan .recharts-line-curve { stroke: var(--accent-cyan); }
+.line-pink .recharts-line-curve { stroke: var(--accent-pink); }
+.line-coral .recharts-line-curve { stroke: var(--accent-from); }
+.chart-dot-cyan { fill: var(--accent-cyan); stroke: var(--bg-from); }
+.chart-dot-pink { fill: var(--accent-pink); stroke: var(--bg-from); }
+.chart-dot-coral { fill: var(--accent-from); stroke: var(--bg-from); }
+
+/* Peta Leaflet */
+.leaflet-container { font: inherit; background: var(--bg-from); }
+.route-line { stroke: var(--accent-to); stroke-width: 4px; stroke-linecap: round; stroke-linejoin: round; fill: none; }
+.route-start { fill: var(--ok); fill-opacity: 1; stroke: var(--bg-from); stroke-width: 2px; }
+.route-end { fill: var(--accent-from); fill-opacity: 1; stroke: var(--bg-from); stroke-width: 2px; }
